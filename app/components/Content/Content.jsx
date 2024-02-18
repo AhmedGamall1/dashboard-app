@@ -25,23 +25,13 @@ const Content = ({ openSidebar, setOpenSidebar }) => {
               <h1 className="font-bold text-[20px] dark:text-white">
                 لوحه التحكم
               </h1>
-              {theme === "light" ? (
-                <Image
-                  src={sunIcon}
-                  width={22}
-                  height={22}
-                  onClick={() => setTheme("dark")}
-                  className="cursor-pointer"
-                />
-              ) : (
-                <Image
-                  src={moonIcon}
-                  width={22}
-                  height={22}
-                  onClick={() => setTheme("light")}
-                  className="cursor-pointer"
-                />
-              )}
+              <Image
+                src={theme === "light" ? sunIcon : moonIcon}
+                width={22}
+                height={22}
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="cursor-pointer"
+              />
             </div>
           </div>
           <div className="shadow-sm bg-white dark:bg-[#2E2E48] rounded-md flex justify-between items-center dark:text-[#E0E0E0]  py-3 text-cBase sm:mt-0 mt-3 w-[340px] px-8 text-[15px]">
